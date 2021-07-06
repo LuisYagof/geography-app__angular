@@ -1,1 +1,26 @@
-<p>by-country works!</p>
+<h2>By Country</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <app-search-input 
+      (onEnter)="searchCountry($event)" 
+      placeholder="Search country" 
+      (onDebounce)="suggestions($event)">
+    </app-search-input>
+  </div>
+</div>
+
+<hr>
+
+<div class="alert alert-danger" *ngIf="errorFlag">
+  Nothing matches with {{ term }}
+</div>
+
+<div class="row" *ngIf="countries.length > 0">
+  <div class="col">
+
+    <app-country-table [countries]="countries"></app-country-table>
+
+  </div>
+</div>

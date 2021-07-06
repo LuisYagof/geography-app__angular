@@ -1,0 +1,13 @@
+:host {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+:host>div.row.container {
+  width: 100%;
+}
+
+:host>* {
+  font-family: "Montserrat Alternates";
+}
