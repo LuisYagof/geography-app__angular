@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country.interface';
 
@@ -12,7 +12,8 @@ export class ByCapitalComponent {
 
   term: string = '';
   errorFlag: boolean = false;
-  countries: Country[] = []
+  countries: Country[] = [];
+  showSuggestions: boolean = false;
 
   constructor(private countryService: CountryService) { }
 
@@ -29,6 +30,16 @@ export class ByCapitalComponent {
           this.countries = [];
         }
       )
+  }
+
+  suggestionFlagHandler(flag: boolean) {
+    this.showSuggestions = flag
+  }
+
+  suggestions(term: string) {
+    this.showSuggestions = true;
+    this.errorFlag = false;
+    this.term = term.trim();
   }
 
 }

@@ -1,20 +1,17 @@
-<!-- <ul class="list-group"
-    *ngIf="showSuggestions"
-    >
+<ul class="list-group">
 
-    <li *ngFor="let country of suggestedCountries"
-      class="list-group-item list-group-item-action">
-      <a [routerLink]="['/country', country.alpha2Code]"
-        class="nav-link">
-        {{country.name}}
-      </a>
-    </li>
+  <li *ngFor="let country of suggestedCountries"
+    class="list-group-item list-group-item-action">
+    <a [routerLink]="['/country', country.alpha2Code]"
+      class="nav-link">
+      {{country.name}}
+    </a>
+  </li>
 
-    <li class="list-group-item list-group-item-action"
-      (click)="searchCountry(term)"
-      *ngIf="term !== ''">
-      <a class="nav-link">
-        Search "{{term | titlecase}}"
-      </a>
-    </li>
-  </ul> -->
+  <li class="list-group-item list-group-item-action"
+    (click)="searchCountry()">
+    <a class="nav-link">
+      Search "{{term | titlecase}}"
+    </a>
+  </li>
+</ul>

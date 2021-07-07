@@ -1,4 +1,4 @@
-import { Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country.interface';
 
@@ -9,9 +9,6 @@ import { Country } from '../../interfaces/country.interface';
     `
       li {
         cursor: pointer;
-      }
-      a {
-        color: #1e6a55;
       }
     `
   ]
@@ -42,16 +39,14 @@ export class ByCountryComponent {
       )
   }
 
+  suggestionFlagHandler(flag: boolean) {
+    this.showSuggestions = flag
+  }
+
   suggestions(term: string) {
     this.showSuggestions = true;
     this.errorFlag = false;
     this.term = term.trim();
-
-    this.countryService.searchCountry(term)
-      .subscribe(
-        countries => this.suggestedCountries = countries.splice(0, 5),
-        err => this.suggestedCountries = []
-      )
   }
 
 }
