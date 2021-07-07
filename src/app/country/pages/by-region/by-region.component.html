@@ -1,52 +1,48 @@
-<h3>Search by region -
-  <small>{{activeRegion | titlecase}}</small>
-</h3>
+<div class="animate__animated animate__fadeIn animate__faster">
 
-<h5>Select a region</h5>
+  <h3>Search by region -
+    <small>{{activeRegion | titlecase}}</small>
+  </h3>
 
-<div class="row">
-  <div class="col">
+  <h5>Select a region</h5>
 
-    <!-- //// FORMA 1 \\\\ -->
-    <!-- <button
-      *ngFor="let region of regions"
-      class="btn btn-outline-secondary m-1"
-      [class.btn-secondary]="region === activeRegion"
-      (click)="activateRegion(region)"
-      >
-      {{region | titlecase}}
-    </button> -->
+  <div class="row">
+    <div class="col">
 
-    <!-- //// FORMA 2 \\\\ -->
-    <!-- <button
-      *ngFor="let region of regions"
-      class="btn btn-outline-secondary m-1"
-      [ngClass]="{
+      <!-- //// FORMA 1 \\\\ -->
+      <!-- <button *ngFor="let region of regions"
+        class="btn btn-outline-secondary m-1"
+        [class.btn-secondary]="region === activeRegion"
+        (click)="activateRegion(region)">
+        {{region | titlecase}}
+      </button> -->
+
+      <!-- //// FORMA 2 \\\\ -->
+      <!-- <button *ngFor="let region of regions"
+        class="btn btn-outline-secondary m-1"
+        [ngClass]="{
         'btn-secondary': region === activeRegion,
         'btn-outline-secondary': region !== activeRegion
       }"
-      (click)="activateRegion(region)"
-      >
-      {{region | titlecase}}
-    </button> -->
+        (click)="activateRegion(region)">
+        {{region | titlecase}}
+      </button> -->
 
-    <!-- //// FORMA 3 \\\\ -->
-    <button
-      *ngFor="let region of regions"
-      class="btn m-1"
-      [class]="getBtnClass(region)"
-      (click)="activateRegion(region)"
-    >
-      {{region | titlecase}}
-    </button>
+      <!-- //// FORMA 3 \\\\ -->
+      <button *ngFor="let region of regions"
+        class="btn m-1"
+        [class]="getBtnClass(region)"
+        (click)="activateRegion(region)">
+        {{region | titlecase}}
+      </button>
 
+    </div>
   </div>
+
 </div>
 
-<div
-  class="row"
-  *ngIf="countries.length > 0"
->
+<div class="row"
+  *ngIf="countries.length > 0">
 
   <div class="col">
     <app-country-table [countries]="countries"></app-country-table>

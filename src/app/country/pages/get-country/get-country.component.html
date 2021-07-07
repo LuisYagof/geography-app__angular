@@ -1,4 +1,5 @@
-<div *ngIf="!country; else countryDiv" class="alert alert-info">
+<div *ngIf="!country; else countryDiv"
+  class="alert alert-info">
   Now loading...
 </div>
 
@@ -16,7 +17,8 @@
 
     <div class="col-4">
       <h3> Flag </h3>
-      <img [src]="country.flag" class="img-thumbnail" />
+      <img [src]="country.flag"
+        class="img-thumbnail" />
     </div>
 
     <div class="col">

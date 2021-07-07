@@ -1,17 +1,21 @@
-<h2>By Capital</h2>
-<hr>
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>By Capital</h2>
+  <hr>
 
-<div class="row">
-  <div class="col">
-    <app-search-input
-      (onEnter)="searchCountry($event)"
-      placeholder="Search capital"
-    >
-    </app-search-input>
+  <div class="row">
+    <div class="col">
+      <app-search-input
+        (onEnter)="searchCountry($event)"
+        placeholder="Search capital"
+      >
+      </app-search-input>
+    </div>
   </div>
-</div>
 
-<hr>
+  <!-- <app-country-suggestions ></app-country-suggestions> -->
+
+  <hr>
+</div>
 
 <div
   class="alert alert-danger"
