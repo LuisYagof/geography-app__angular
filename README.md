@@ -1,5 +1,9 @@
 # GeographyApp
 
+App with examples and notes Angular fundamentals & public API consuming
+
+## Tools
+
 - Routing
 
 - RouterLink & RouterLinkActive
